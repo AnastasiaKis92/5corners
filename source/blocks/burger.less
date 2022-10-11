@@ -1,0 +1,35 @@
+.burger {
+  top: 1rem;
+  left: @xs;
+  z-index: 10;
+  display: block;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.burger__inner,
+.burger__inner::before,
+.burger__inner::after {
+  display: block;
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background-color: @black;
+}
+
+.burger__inner {
+  // top: 10px;
+  &::before {
+    content: "";
+    top: -10px;
+  }
+  &::after {
+    content: "";
+    bottom: -10px;
+  }
+}
+

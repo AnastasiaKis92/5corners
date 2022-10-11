@@ -1,0 +1,47 @@
+.nav {
+  display: none;
+}
+
+@media (min-width: @desktop-width) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 4.3rem 0 2rem;
+  }
+
+  .nav__list {
+    display: flex;
+    .reset-list;
+
+    &:first-of-type {
+      counter-reset: section;
+
+      & .nav__link::after {
+        content: " " counter(section) ;
+        counter-increment: section;
+      }
+    }
+
+    &:last-of-type {
+      counter-reset: section 3;
+
+      & .nav__link::after {
+        content: " " counter(section) ;
+        counter-increment: section;
+      }
+    }
+  }
+
+  .nav__item {
+    & + & {
+      margin-left: 1.875rem;
+    }
+  }
+
+  .nav__link {
+    .helvetica-700;
+    .font(1.125rem, calc(20/18));
+    color: @grey-1;
+    text-transform: uppercase;
+  }
+}

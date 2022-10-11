@@ -1,0 +1,47 @@
+.font (@font-size, @line-height) {
+  font-size: @font-size;
+  line-height: @line-height;
+}
+
+.helvetica-700 {
+  font-family: "Helvetica-Bold", "Arial", sans-serif;
+  font-weight: 700;
+}
+
+.helvetica {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+}
+
+.reset-list () {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reset-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+// Центрирование
+.align-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.align-top {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.align-left {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,132 @@
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__label {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-left: 1rem;
+  mask-image: url('../images/svg-sprites/sprite.svg#search');
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center;
+  background-color: @black;
+}
+
+.header__input {
+  display: none;
+}
+
+.header__link {
+  display: block;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center;
+  background-color: @black;
+
+  &--logo {
+    width: 77px;
+    height: 24px;
+    margin: 0 auto;
+    mask-image: url('../images/svg-sprites/sprite.svg#logo');
+  }
+  &--login {
+    display: none;
+    width: 25px;
+    height: 27px;
+    mask-image: url('../images/svg-sprites/sprite.svg#login');
+  }
+  &--favourite {
+    width: 25px;
+    height: 22px;
+    mask-image: url('../images/svg-sprites/sprite.svg#favourite');
+  }
+  &--cart {
+    position: relative;
+    width: 22px;
+    height: 24px;
+    mask-image: url('../images/svg-sprites/sprite.svg#cart');
+    &::after {
+      content: '';
+      .align-center;
+      width: 1rem;
+      height: 1rem;
+      background-color: @black;
+      border-radius: 50%;
+    }
+  }
+}
+
+.header__list {
+  .reset-list;
+  display: flex;
+}
+
+.header__item {
+  position: relative;
+  & + & {
+    margin-left: 1rem;
+  }
+}
+
+.header__count {
+  position: absolute;
+  top: -18%;
+  right: -15%;
+  color: @white;
+  z-index: 1;
+  .font(0.75rem, calc(14/12));
+  &::before {
+    content: '';
+    .align-center;
+    width: 1rem;
+    height: 1rem;
+    background-color: @black;
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .header {
+    position: relative;
+  }
+
+  .header__label {
+    width: 25px;
+    height: 25px;
+  }
+
+  .header__input {
+    display: block;
+    margin-left: 1.3rem;
+    margin-right: auto;
+  }
+
+  .header__link {
+    &--logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 160px;
+      height: 50px;
+    }
+    &--login {
+      display: block;
+    }
+    &--favourite {
+      width: 28px;
+      height: 25px;
+    }
+    &--cart {
+      width: 25px;
+      height: 26px;
+    }
+  }
+
+}
+

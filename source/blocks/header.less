@@ -68,7 +68,10 @@
 .header__item {
   position: relative;
   & + & {
-    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  &:last-of-type {
+    margin-right: 0.5rem;
   }
 }
 
@@ -104,12 +107,16 @@
     display: block;
     margin-left: 1.3rem;
     margin-right: auto;
+    .font(1.125rem, calc(20/18));
+    &::placeholder {
+      .font(1.125rem, calc(20/18));
+    }
   }
 
   .header__link {
     &--logo {
       position: absolute;
-      top: 50%;
+      top: 38%;
       left: 50%;
       transform: translate(-50%, 0);
       width: 160px;

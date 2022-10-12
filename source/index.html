@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html class="page" lang="ru">
 <head>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=cbd58353-8659-49ba-88ae-16dba7a68c51&lang=ru_RU" type="text/javascript">
+  </script>
+  <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+
+  <script src="input_validation.js" type="text/javascript"></script>
+  <!-- <script src="balloon_and_hint.js" type="text/javascript"></script> -->
+  <!-- <script src="placemark_balloon_layout.js" type="text/javascript"></script> -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
@@ -9,8 +16,8 @@
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
-    />
-  <link rel="stylesheet" href="css/styles.min.css" />
+    >
+  <link rel="stylesheet" href="css/styles.min.css">
   <title>Тестовое задание</title>
 </head>
 
@@ -23,10 +30,10 @@
       </button>
 
       <form class="header__form" action="https://echo.htmlacademy.ru/" method="get"></form>
-        <label class="header__label" for id="search">
+        <label class="header__label" for="search">
           <span class="visually-hidden">Поиск по сайту</span>
         </label>
-        <input id="search" class="input header__input" type="text" placeholder="Поиск">
+        <input id="search" class="input header__input" type="text" placeholder="Поиск" name="search">
 
       <a href="#" class="header__link header__link--logo">
         <span class="visually-hidden">Логотип</span>
@@ -79,9 +86,82 @@
         </li>
       </ol>
     </nav>
+
+    <div class="header__breadcrumbs breadcrumbs">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a href="#" class="breadcrumbs__link">
+            Главная
+          </a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a href="/" class="breadcrumbs__link">
+            Корзина
+          </a>
+        </li>
+      </ul>
+    </div>
+
   </header>
 
+  <main>
+    <section class="cart container">
+      <div class="cart__wrapper">
+        <h1 class="cart__title">Корзина</h1>
+        <p class="cart__text">Есть аккаунт?
+          <a href="#" class="cart__link">Войти</a>
+        </p>
+        <form action="https://echo.htmlacademy.ru/" method="get">
+          <fieldset class="cart__group">
+            <ul class="cart__list">
+              <li class="cart__item">
+                <textarea id="address" class="input cart__input" name="address" autocomplete="off" rows="1" placeholder=" "></textarea>
+                <label for="address" class="cart__label">Адрес</label>
+              </li>
 
+                <li class="cart__item">
+                  <input id="name" type="text" class="input cart__input" name="name" placeholder=" ">
+                  <label for="name" class="cart__label">Ваше Имя</label>
+                </li>
+
+                <li class="cart__item">
+                  <input id="tel" type="tel" class="input cart__input" name="tel" placeholder=" ">
+                  <label for="tel" class="cart__label">Ваш Телефон</label>
+                </li>
+
+              <li class="cart__item">
+                <input id="email" type="email" class="input cart__input" name="email" placeholder=" ">
+                <label for="email" class="cart__label">Ваш Email</label>
+              </li>
+
+              <li class="cart__item">
+                <select aria-label="Сортировка" id="package" class="input cart__input cart__select" name="package" required>
+                  <option value="">без упаковки</option>
+                  <option value="without">без упаковки</option>
+                  <option value="standart">стандартная</option>
+                  <option value="gift">подарочная</option>
+                </select>
+              </li>
+
+              <li class="cart__item">
+                <textarea id="comment" class="input cart__input" name="comment" rows="1" placeholder=" "></textarea>
+                <label for="comment" class="cart__label">Введите комментарий</label>
+              </li>
+
+            </ul>
+
+
+          </fieldset>
+
+          <button class="button cart__button" type="submit">Купить</button>
+        </form>
+      </div>
+
+      <div id="map" class="cart__map"></div>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="scripts/main.min.js" type="module"></script>
 </body>
 

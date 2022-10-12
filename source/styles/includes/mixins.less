@@ -26,6 +26,17 @@
   cursor: pointer;
 }
 
+.hover {
+  & {
+    transition: color 0.3s;
+    &:hover {
+      color: @black;
+      transition: color 0.1s;
+
+    }
+  }
+}
+
 // Центрирование
 .align-center {
   position: absolute;

@@ -35,9 +35,6 @@
   }
   &--login {
     display: none;
-    width: 25px;
-    height: 27px;
-    mask-image: url('../images/svg-sprites/sprite.svg#login');
   }
   &--favourite {
     width: 25px;
@@ -96,27 +93,41 @@
 @media (min-width: @desktop-width) {
   .header {
     position: relative;
+    &.container {
+      padding-bottom: 2.3rem;
+    }
   }
 
   .header__label {
     width: 25px;
     height: 25px;
+    margin-left: 0;
   }
 
   .header__input {
     display: block;
+    width: 250px;
     margin-left: 1.3rem;
     margin-right: auto;
     .font(1.125rem, calc(20/18));
+    transition: color 0.3s;
     &::placeholder {
       .font(1.125rem, calc(20/18));
     }
+    &:focus::placeholder {
+      color: @black;
+      transition: color 0.1s;
+    }
+  }
+
+  .header__item {
+    margin-right: 1rem;
   }
 
   .header__link {
     &--logo {
       position: absolute;
-      top: 38%;
+      top: 34%;
       left: 50%;
       transform: translate(-50%, 0);
       width: 160px;
@@ -124,16 +135,17 @@
     }
     &--login {
       display: block;
+      width: 28px;
+      height: 28px;
+      mask-image: url('../images/svg-sprites/sprite.svg#login');
     }
     &--favourite {
-      width: 28px;
-      height: 25px;
+      width: 32px;
+      height: 28px;
     }
     &--cart {
-      width: 25px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
     }
   }
-
 }
-

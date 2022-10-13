@@ -22,7 +22,6 @@
 }
 
 .burger__inner {
-  // top: 10px;
   &::before {
     content: "";
     top: -10px;
@@ -33,3 +32,8 @@
   }
 }
 
+@media (min-width: @desktop-width) {
+  .burger {
+    display: none;
+  }
+}

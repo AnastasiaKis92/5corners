@@ -1,22 +1,10 @@
 .select {
   display: inline-block;
   vertical-align: top;
-  // max-width: 400px;
   width: 100%;
 }
 
-// .select-wrap {
-// max-width: 700px;
-// width: 100%;
-// margin: 20px auto;
-// }
-
-// .select-wrap select {
-// margin: 20px;
-// }
-
 .select__gap {
-// background: transparent;
   position: relative;
   min-height: 42px;
   padding: 0.8rem 0;
@@ -76,5 +64,7 @@
 }
 
 @media (min-width: @desktop-width) {
-
+  .select__gap {
+    padding: 1rem 0;
+  }
 }

@@ -25,6 +25,7 @@
     "gulp-svgmin": "^4.1.0",
     "gulp-svgstore": "^9.0.0",
     "gulp-terser": "^2.1.0",
+    "inputmask": "^5.0.7",
     "less-plugin-glob": "^3.0.0",
     "path": "^0.12.7",
     "postcss": "^8.3.11",

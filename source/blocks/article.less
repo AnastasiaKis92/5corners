@@ -80,12 +80,11 @@
   text-underline-offset: 2px;
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @tablet-width) {
   .article {
     display: grid;
     column-gap: 1.25rem;
     row-gap: 0.625rem;
-    width: 93%;
     padding: 1.5rem 0;
   }
 
@@ -109,5 +108,11 @@
   .article__link {
     .font(0.875rem, calc(16/14));
     .hover;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .article {
+    width: 93%;
   }
 }

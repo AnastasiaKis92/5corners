@@ -1,15 +1,17 @@
-
 import Inputmask from 'inputmask';
 
 //Маска для номера телефона
 const initTelVal = () => {
   $('#tel').inputmask({
     mask: '+7 (999)999-99-99',
-    showMaskOnHover: true,
+    showMaskOnHover: false,
     inputmode: 'tel',
     onincomplete: function () {
-      $('.cart__label--tel').html('Ошибка ввода').addClass('invalid');
-      $('#tel').addClass('invalid');
+      const tel = $(this).val();
+      if(tel.length > 0) {
+        $('.cart__label--tel').html('Ошибка ввода').addClass('invalid');
+        $('#tel').addClass('invalid');
+      }
     },
     oncomplete: function () {
       $('.cart__label--tel').html('Номер телефона').removeClass('invalid');

@@ -90,7 +90,7 @@
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @tablet-width) {
   .header {
     position: relative;
     &.container {
@@ -127,7 +127,6 @@
   .header__link {
     &--logo {
       position: absolute;
-      top: 34%;
       left: 50%;
       transform: translate(-50%, 0);
       width: 160px;
@@ -146,6 +145,14 @@
     &--cart {
       width: 28px;
       height: 28px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .header__link {
+    &--logo {
+      top: 37%;
     }
   }
 }

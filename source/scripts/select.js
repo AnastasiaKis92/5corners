@@ -1,11 +1,10 @@
-
 const initSelect = () => {
   $('.cart__select').each(function() {
     $('.cart__select option[value=""]').remove();
     const $this = $(this),
       selectOption = $this.find('option'),
       selectOptionLength = selectOption.length,
-      dur = 500;
+      dur = 150;
     $this.hide();
     $this.wrap('<div class="select"></div>');
     $('<div>', {

@@ -1,5 +1,8 @@
 .cart {
   position: relative;
+  &.container {
+    padding-top: 0;
+  }
 }
 
 .cart__group {
@@ -27,17 +30,18 @@
 .cart__item {
   position: relative;
   & + & {
-    margin-top: 1.2rem;
+    margin-top: 1.3rem;
   }
   &:first-of-type {
-    margin-bottom: 244px;
+    margin-bottom: 255px;
   }
 }
 
 // Анимация label у input
 .cart__input {
   width: 100%;
-  min-height: 42px;
+  min-height: 40px;
+  padding-bottom: 0.5rem;
   .font(1rem, calc(19/16));
   resize: none;
 }
@@ -77,9 +81,10 @@
   width: 100%;
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @tablet-width) {
   .cart {
     display: flex;
+    justify-content: space-between;
     &.container {
       padding-top: 0;
     }
@@ -104,6 +109,9 @@
     &:first-of-type {
       margin-bottom: 0;
     }
+    & + & {
+      margin-top: 1.8rem;
+    }
     &:not(&#nameItem):not(&#telItem) {
       grid-column: 1/3;
     }
@@ -115,18 +123,23 @@
     }
   }
 
+  .cart__input#name,
+  .cart__input#tel {
+    width: 100%;
+  }
+
   .cart__subtitle {
-    margin: 4.2rem 0 0.8rem;
+    margin: 4.2rem 0 0.6rem;
   }
 
   .cart__total {
     position: absolute;
-    top: 567px;
-    right: @xl;
-    width: 557px;
-    padding: 2.8rem 1.8rem;
+    top: 398px;
+    right: @xm;
+    width: calc(50% - 4.4rem);
+    padding: 2rem 1rem;
     color: @white;
-    .font(2.5rem, calc(46/40));
+    .font(2rem, calc(38/32));
     background-color: fadeout(@black, 20);
     z-index: 2;
   }
@@ -138,5 +151,14 @@
       background-color: @black;
       transition: color 0.1s, background-color 0.1s;
     }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .cart__total {
+    top: 564px;
+    width: calc(50% - 4.2rem);
+    padding: 2.8rem 1.8rem;
+    .font(2.5rem, calc(46/40));
   }
 }

@@ -117,15 +117,14 @@
             <fieldset class="cart__group">
               <ul class="cart__list">
                 <li class="cart__item">
-                  <textarea
+                    <input
                     id="address"
                     class="input cart__input"
                     name="address"
-                    rows="1"
                     placeholder=" "
                     required
-                  ></textarea>
-                  <label for="address" class="cart__label">Адрес</label>
+                    ></input>
+                    <label for="address" class="cart__label">Адрес</label>
                 </li>
 
                 <li class="cart__item" id="nameItem">
@@ -172,7 +171,7 @@
                     name="package"
                     required
                   >
-                    <option value="">без упаковки</option>
+                    <option value="">Тип упаковки</option>
                     <option value="without">без упаковки</option>
                     <option value="standart">стандартная</option>
                     <option value="gift">подарочная</option>
@@ -180,13 +179,12 @@
                 </li>
 
                 <li class="cart__item">
-                  <textarea
+                  <input
                     id="comment"
-                    class="input cart__input"
                     name="comment"
-                    rows="1"
+                    class="input cart__input"
                     placeholder=" "
-                  ></textarea>
+                  ></input>
                   <label for="comment" class="cart__label"
                     >Введите комментарий</label
                   >
